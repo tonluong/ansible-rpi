@@ -1,46 +1,53 @@
 # tasks
 ---
-- name: Console TTY1
+- name: "pi-console-tty1"
   include: pi-console-tty1.yml
   when: pi_console_tty1 is defined
       
-- name: Console TTY3
+- name: "pi-console-tty3"
   include: pi-console-tty3.yml
   when: pi_console_tty3 is defined
 
+- name: "pi-nologo"
+  include: pi-nologo.yml
+  when: pi_nologo is defined
+
+- name: "pi-quiet"
+  include: pi-quiet.yml
+  when: pi_quiet is defined
       
-- name: GPU Memory Reset
+- name: "pi-gpumem-reset" 
   include: pi-gpumem-reset.yml
   when: pi_gpumem_reset is defined
 
-- name: Set GPU Memory --> 128MB
+- name: "pi-gpumem-128mb"
   include: pi-gpumem-128mb.yml
   when: pi_gpumem_128mb is defined
 
 
 # Node.js 
-- name: "Node.js Current Variables"
+- name: "pi-nodejs-current Variables"
   include_vars: pi-nodejs-current.yml
   when: pi_nodejs_current is defined
-- name: "Node.js Current"
+- name: "pi-nodejs-current"
   include: pi-nodejs-current.yml
   when: pi_nodejs_current is defined
 
-- name: "Node.js LTS Variables"
+- name: "pi-nodejs-lts Variables"
   include_vars: pi-nodejs-lts.yml
   when: pi_nodejs_lts is defined
-- name: "Node.js LTS"
+- name: "pi-nodejs-lts"
   include: pi-nodejs-lts.yml
   when: pi_nodejs_lts is defined
 
-- include: pi-nologo.yml
-  when: pi_nologo is defined
 
 
-- include: pi-usb-maxcurrent-reset.yml
+- name: "pi-usb-maxcurrent-reset"
+  include: pi-usb-maxcurrent-reset.yml
   when: pi_usb_maxcurrent_reset is defined
 
-- include: pi-usb-maxcurrent.yml
+- name: "pi-usb-maxcurrent"
+  include: pi-usb-maxcurrent.yml
   when: pi_usb_maxcurrent is defined
 
 ...

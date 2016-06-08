@@ -64,11 +64,12 @@ ansible-playbook playbook.yml -i inventory.yml
 
 Ansible Variables | Ansible Values |  |   
 --- | --- | --- | --- | --- | ---
- **TTY Console** | | | 
+ **/boot/cmdline.txt** | | | 
 `pi_console_tty1` | `true` | `console=tty1` 
 `pi_console_tty3` | `true` | `console=tty3` 
+`pi_nologo` | `true` | `logo.nologo`
 &nbsp; | | | 
- **GPU Memory** | | | 
+ **/boot/config.txt** | | | 
 `pi_gpumem_128mb` | `true` | `gpu_mem=128` 
 `pi_gpumem_reset` | `true` | 
 &nbsp; | | 
