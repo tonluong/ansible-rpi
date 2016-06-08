@@ -84,6 +84,7 @@ Playbook Variables | Values |  |
 `pi_console_tty1` | `true` | `console=tty1` 
 `pi_console_tty3` | `true` | `console=tty3` 
 `pi_cursor_off` | `true` | `vt.global_cursor_default=0`
+`pi_loglevel_2` | `true` | `loglevel=2`
 `pi_nologo` | `true` | `logo.nologo`
 `pi_quiet` | `true` | `quiet`
 &nbsp; | | | 
