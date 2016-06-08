@@ -21,6 +21,9 @@
 - include: pi-nodejs-lts.yml
   when: pi_nodejs_lts is defined
 
+- include: pi-nologo.yml
+  when: pi_nologo is defined
+
 
 - include: pi-usb-maxcurrent-reset.yml
   when: pi_usb_maxcurrent_reset is defined

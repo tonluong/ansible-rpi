@@ -1,7 +1,7 @@
 # defaults
 ---
-- include: pi_locale.yml
-  when: (pi_locale is defined) and (pi_locale_lang is defined)    
+pi_locale_lang: en_US.UTF-8
+pi_locale_encoding: UTF-8  
 
 ...
 

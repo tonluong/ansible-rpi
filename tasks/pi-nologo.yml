@@ -1,0 +1,16 @@
+---
+# http://stackoverflow.com/questions/19942269/how-to-check-if-list-of-strings-are-present-in-command-output-in-ansible
+- name: Check for logo.nologo
+  shell: cat /boot/cmdline.txt | grep 'logo.nologo'
+  register: pi_nologo_notfound
+  ignore_errors: true
+
+- debug: msg={{pi_nologo_notfound}}
+  
+- name: Add logo.nologo to end of line 
+  become: true
+  replace: dest=/boot/cmdline.txt regexp='(\s+)$' replace=' logo.nologo '
+  when: pi_nologo_notfound | failed
+
+...
+
