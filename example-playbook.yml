@@ -24,6 +24,7 @@
 
     # Node.js
     - pi_nodejs_current: true
+    - pi_nodejs_lts: true
 
   roles:
     - ansible-rpi

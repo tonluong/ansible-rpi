@@ -2,6 +2,8 @@
 - name: Reset GPU memory to default
   lineinfile: dest=/boot/config.txt regexp='gpu_mem=[0-9]+' state=absent
   become: true
+  tags:
+      - default
 
 ...
 

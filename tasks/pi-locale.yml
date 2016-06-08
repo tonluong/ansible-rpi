@@ -9,4 +9,7 @@
     - { src: templates/pi-locale.j2, dest: /etc/default/locale }
     - { src: templates/pi-locale.gen.j2, dest: /etc/locale.gen }
   notify: update pi-locale
+  tags:
+      - us
+
 ...
