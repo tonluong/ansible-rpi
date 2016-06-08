@@ -99,6 +99,8 @@ Playbook Variables | Values |  |
 `pi_locale` | `true` |  
 &nbsp;&nbsp;&#8735;`pi_locale_lang` | <nobr>`en_US.UTF-8` (default)</nobr> | see list at: `/usr/local/share/i18n/SUPPORTED`
 &nbsp;&nbsp;&#8735;`pi_locale_encoding` | <nobr>`UTF-8` (default)</nobr> | see list at: `/usr/local/share/i18n/SUPPORTED` 
+`pi_getty_tty_off` | `true` |  
+&nbsp;&nbsp;&#8735;`pi_getty_tty_off_item` | <nobr>`1` (default)</nobr> | `1`, `2`, `3`, ...
 &nbsp; | | 
 **Software** | | | 
 `pi_nodejs_current` | `true` | Node.js Current v6.2.1, ARMv6

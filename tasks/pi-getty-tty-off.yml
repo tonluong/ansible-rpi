@@ -1,0 +1,12 @@
+---
+#Systemd
+- name: "Removing getty@tty{{ pi_getty_tty_off_item }}"
+  become: true
+  file: path="/etc/systemd/system/getty.target.wants/getty@tty{{ pi_getty_tty_off_item }}.service" state=absent   
+
+#Inittab
+#- name: Stop Getty from loading on tty1 
+#  become: true
+#  replace: dest=/etc/inittab regexp='^1:' replace='# 1:'  
+...
+

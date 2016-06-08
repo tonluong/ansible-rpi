@@ -49,7 +49,11 @@
   include: pi-locale.yml
   when: pi_locale is defined
 
+- name: "pi-getty-tty-off"
+  include: pi-getty-tty-off.yml
+  when: pi_getty_tty_off is defined
       
+
 # Software 
 - name: "pi-nodejs-current Variables"
   include_vars: pi-nodejs-current.yml
