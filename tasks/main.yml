@@ -5,10 +5,19 @@
       
 - include: pi-console-tty3.yml
   when: pi_console_tty3 is defined
+
       
+- include: pi-gpumem-reset.yml
+  when: pi_gpumem_reset is defined
+
+- include: pi-gpumem-128mb.yml
+  when: pi_gpumem_128mb is defined
+
+
 # Node.js Current v6.x
 - include: pi-nodejs-current.yml
   when: pi_nodejs_current is defined
+
 
 - include: pi-usb-maxcurrent-reset.yml
   when: pi_usb_maxcurrent_reset is defined

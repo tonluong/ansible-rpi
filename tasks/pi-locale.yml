@@ -1,0 +1,12 @@
+---
+- name: "Setup Locale --> {{ pi_locale_lang }}"
+  become: true
+  template:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    mode: 0644
+  with_items:
+    - { src: templates/pi-locale.j2, dest: /etc/default/locale }
+    - { src: templates/pi-locale.gen.j2, dest: /etc/locale.gen }
+  notify: update pi-locale
+...

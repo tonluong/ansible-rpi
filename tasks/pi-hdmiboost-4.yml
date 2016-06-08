@@ -1,0 +1,5 @@
+---
+- name: "Set HDMI Boost to 4"
+  lineinfile: dest=/boot/config.txt line='config_hdmi_boost=4' state=present
+  become: true
+...  

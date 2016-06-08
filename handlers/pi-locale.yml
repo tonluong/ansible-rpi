@@ -1,0 +1,10 @@
+# handlers
+---
+- name: update pi-locale
+  become: true
+  command: "{{ item }}"
+  with_items:
+    - "locale-gen --purge {{ pi_locale_lang }}"
+    - dpkg-reconfigure --frontend noninteractive locales
+
+...

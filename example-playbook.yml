@@ -2,10 +2,27 @@
 - name: Example Playbook
   hosts: pi
   vars:
+    # tty
     - pi_console_tty1: true
     - pi_console_tty3: true
+
+    # GPU Memory
+    - pi_gpumem_reset: true 
+    - pi_gpumem_128mb: true 
+      
+    # HDMI Boost
+    - pi_hdmiboost-4: true 
+
+    # Locale
+    - pi_locale: true 
+    - pi_locale_lang: en_US.UTF-8
+    - pi_locale_encoding: UTF-8
+
+    # USB 
     - pi_usb_maxcurrent_reset: true
     - pi_usb_maxcurrent: true
+
+    # Node.js
     - pi_nodejs_current: true
 
   roles:

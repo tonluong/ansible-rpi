@@ -1,0 +1,6 @@
+# defaults
+---
+- pi_locale_encoding: UTF-8
+
+...
+

@@ -1,0 +1,7 @@
+# defaults
+---
+- include: pi_locale.yml
+  when: (pi_locale is defined) and (pi_locale_lang is defined)    
+
+...
+
