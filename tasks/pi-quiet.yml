@@ -1,15 +1,15 @@
 ---
 # http://stackoverflow.com/questions/19942269/how-to-check-if-list-of-strings-are-present-in-command-output-in-ansible
+# https://codepoets.co.uk/2014/ansible-random-things/  
 - name: Check for quiet
-  shell: cat /boot/cmdline.txt | grep 'quiet'
+  shell: cat /boot/cmdline.txt | grep -c 'quiet' || true
   register: pi_quiet_notfound
-  ignore_errors: true
 
 - name: Add quiet to end of line 
   become: true
   replace: dest=/boot/cmdline.txt regexp='(\s+)$' replace=' quiet '
-  when: pi_quiet_notfound | failed
+  when: pi_quiet_notfound.stdout == "0"
 
-- debug: msg={{pi_quiet_notfound}}  
+#- debug: msg={{pi_quiet_notfound}}  
 ...
 
