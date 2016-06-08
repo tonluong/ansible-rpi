@@ -14,9 +14,12 @@
   when: pi_gpumem_128mb is defined
 
 
-# Node.js Current v6.x
+# Node.js 
 - include: pi-nodejs-current.yml
   when: pi_nodejs_current is defined
+
+- include: pi-nodejs-lts.yml
+  when: pi_nodejs_lts is defined
 
 
 - include: pi-usb-maxcurrent-reset.yml

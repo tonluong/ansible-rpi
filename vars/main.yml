@@ -3,5 +3,7 @@
 - include: pi-nodejs-current.yml
   when: pi_nodejs_current is defined
 
+- include: pi-nodejs-lts.yml
+  when: pi_nodejs_lts is defined
 ...
 
