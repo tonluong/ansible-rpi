@@ -1,0 +1,19 @@
+---
+# https://codepoets.co.uk/2014/ansible-random-things/  
+- name: "Check for vt.global_cursor_default"
+  shell: cat /boot/cmdline.txt | grep -c 'vt.global_cursor_default' || true
+  register: pi_cursor_off_grep
+
+- name: "Variable Missing: Add vt.global_cursor_default=0 to end of line" 
+  become: true
+  replace: dest=/boot/cmdline.txt regexp='(\s+)$' replace=' vt.global_cursor_default=0 '
+  when: pi_cursor_off_grep.stdout == "0"
+
+- name: "Variable Exist: Set vt.global_cursor_default=0" 
+  become: true
+  replace: dest=/boot/cmdline.txt regexp='vt.global_cursor_default=[0-1]' replace='vt.global_cursor_default=0'    
+  when: pi_cursor_off_grep.stdout == "1"
+
+#- debug: msg={{pi_cursor_off_grep}}
+...
+

@@ -25,6 +25,10 @@
   include: pi-gpumem-128mb.yml
   when: pi_gpumem_128mb is defined
 
+- name: "pi-cursor-off"
+  include: pi-cursor-off.yml
+  when: pi_cursor_off is defined
+
 
 # /boot/config.txt
 - name: "pi-usb-maxcurrent-reset"
