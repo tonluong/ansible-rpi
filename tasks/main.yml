@@ -1,5 +1,6 @@
 # tasks
 ---
+# /boot/cmdline.txt
 - name: "pi-console-tty1"
   include: pi-console-tty1.yml
   when: pi_console_tty1 is defined
@@ -25,7 +26,22 @@
   when: pi_gpumem_128mb is defined
 
 
-# Node.js 
+# /boot/config.txt
+- name: "pi-usb-maxcurrent-reset"
+  include: pi-usb-maxcurrent-reset.yml
+  when: pi_usb_maxcurrent_reset is defined
+
+- name: "pi-usb-maxcurrent"
+  include: pi-usb-maxcurrent.yml
+  when: pi_usb_maxcurrent is defined
+
+
+# System Config
+- name: "pi-locale"
+  include: pi-locale.yml
+  when: pi_locale is defined
+
+# Software 
 - name: "pi-nodejs-current Variables"
   include_vars: pi-nodejs-current.yml
   when: pi_nodejs_current is defined
@@ -41,14 +57,6 @@
   when: pi_nodejs_lts is defined
 
 
-
-- name: "pi-usb-maxcurrent-reset"
-  include: pi-usb-maxcurrent-reset.yml
-  when: pi_usb_maxcurrent_reset is defined
-
-- name: "pi-usb-maxcurrent"
-  include: pi-usb-maxcurrent.yml
-  when: pi_usb_maxcurrent is defined
 
 ...
 
