@@ -1,0 +1,7 @@
+# vars
+---
+- include: pi-nodejs-current.yml
+  when: pi_nodejs_current is defined
+
+...
+

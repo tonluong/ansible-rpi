@@ -1,0 +1,15 @@
+---
+- name: Example Playbook
+  hosts: pi
+  vars:
+    - pi_console_tty1: true
+    - pi_console_tty3: true
+    - pi_usb_maxcurrent_reset: true
+    - pi_usb_maxcurrent: true
+    - pi_nodejs_current: true
+
+  roles:
+    - ansible-rpi
+
+...
+

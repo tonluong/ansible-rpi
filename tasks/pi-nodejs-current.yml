@@ -1,0 +1,18 @@
+---
+- name: "Installing: {{pi_nodejs_current_file}} -> /opt" 
+  become: true
+  unarchive: src="{{pi_nodejs_current_file}}" dest=/opt copy=no
+
+- name: "Linking:  /opt/node -> /opt/{{pi_nodejs_current_folder}}"
+  become: true
+  file: src="/opt/{{pi_nodejs_current_folder}}" dest="/opt/node" state=link
+
+- name: "Add /opt/node/bin to PATH -> /etc/profile"
+  become: true
+  lineinfile: dest=/etc/profile line='export PATH=$PATH:/opt/node/bin' insertafter='EOF' state=present
+  
+- name: "Add /opt/node/bin to PATH -> /etc/sudoers (for sudo)"
+  become: true
+  lineinfile: dest=/etc/sudoers line='Defaults	secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/node/bin"' insertafter='EOF' state=present
+
+...

@@ -1,0 +1,6 @@
+---
+- name: Set console --> tty1 
+  become: true
+  replace: dest=/boot/cmdline.txt regexp='console=tty[1-9]' replace='console=tty1'
+...
+

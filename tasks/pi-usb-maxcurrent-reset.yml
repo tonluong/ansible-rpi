@@ -1,0 +1,10 @@
+---
+- name: "Remove: max_current_usb=1 --> /boot/config.txt"
+  become: true  
+  lineinfile: dest=/boot/config.txt line='max_current_usb=1' state=absent
+
+- name: "Remove: max_current_usb=0 --> /boot/config.txt"
+  become: true  
+  lineinfile: dest=/boot/config.txt line='max_current_usb=0' state=absent
+...
+
