@@ -1,24 +1,36 @@
 # tasks
 ---
-- include: pi-console-tty1.yml
+- name: Console TTY1
+  include: pi-console-tty1.yml
   when: pi_console_tty1 is defined
       
-- include: pi-console-tty3.yml
+- name: Console TTY3
+  include: pi-console-tty3.yml
   when: pi_console_tty3 is defined
 
       
-- include: pi-gpumem-reset.yml
+- name: GPU Memory Reset
+  include: pi-gpumem-reset.yml
   when: pi_gpumem_reset is defined
 
-- include: pi-gpumem-128mb.yml
+- name: Set GPU Memory --> 128MB
+  include: pi-gpumem-128mb.yml
   when: pi_gpumem_128mb is defined
 
 
 # Node.js 
-- include: pi-nodejs-current.yml
+- name: "Node.js Current Variables"
+  include_vars: pi-nodejs-current.yml
+  when: pi_nodejs_current is defined
+- name: "Node.js Current"
+  include: pi-nodejs-current.yml
   when: pi_nodejs_current is defined
 
-- include: pi-nodejs-lts.yml
+- name: "Node.js LTS Variables"
+  include_vars: pi-nodejs-lts.yml
+  when: pi_nodejs_lts is defined
+- name: "Node.js LTS"
+  include: pi-nodejs-lts.yml
   when: pi_nodejs_lts is defined
 
 - include: pi-nologo.yml
