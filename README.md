@@ -12,42 +12,56 @@ Software | | &nbsp;
 Node.js Current | v6.2.1 | ARMv6
 Node.js LTS | v4.4.5 | ATMv6
 
+<br>
+## 1. Put inside Roles folder
+
+```
+myansible/
+		roles/				<-- Put it here
+		playbook.yml
+		inventory.yml
+		...
+	
+```
+```shell
+cd myansible/roles/
+git clone https://github.com/tonluong/ansible-rpi.git
+```  
+
+<br>
+## 2. Setup Playbook, Inventory
+
+playbook.yml
 
 ```yaml
 ---
-- name: Example Playbook
-  hosts: pi
+- hosts: pi
+
   vars:
-    # tty
-    - pi_console_tty1: true
-    - pi_console_tty3: true
-
-    # GPU Memory
-    - pi_gpumem_reset: true 
-    - pi_gpumem_128mb: true 
-      
-    # HDMI Boost
-    - pi_hdmiboost-4: true 
-
-    # Locale
-    - pi_locale: true 
-    - pi_locale_lang: en_US.UTF-8
-    - pi_locale_encoding: UTF-8
-
-    # USB 
-    - pi_usb_maxcurrent_reset: true
-    - pi_usb_maxcurrent: true
-
-    # Node.js
     - pi_nodejs_current: true
-    - pi_nodejs_lts: true
 
   roles:
     - ansible-rpi
-
 ...
-        
 ```
+<br>
+inventory.yml
+
+```yaml
+[pi]
+192.168.9.5		ansible_ssh_user=pi
+192.168.9.6		ansible_ssh_user=pi
+```
+<br>
+## 3. Run it
+```shell
+cd myansible/
+ansible-playbook playbook.yml -i inventory.yml
+``` 
+    
+<br>
+---
+
 <br>
 ## Ansbile Variables
 
