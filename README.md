@@ -2,10 +2,7 @@
 
 Setup Raspberry Pi using Ansible
 
-- Node.js Current v6.2.1
-- Node.js LTS v4.4.5
 
-Features
 
 Software | | &nbsp;
  --- | --- | ---
