@@ -94,10 +94,10 @@ Playbook Variables | Values |  |
 `pi_usb_maxcurrent_reset` | `true` | 
 `pi_hdmiboost-4` | `true` | `config_hdmi_boost=4` 
 &nbsp; | | | 
- **System Config** | | | 
+**System Config** | | | 
 `pi_locale` | `true` |  
-`pi_locale_lang` | <nobr>`en_US.UTF-8` (default)</nobr> | see list at: `/usr/local/share/i18n/SUPPORTED`
-`pi_locale_encoding` | <nobr>`UTF-8` (default)</nobr> | see list at: `/usr/local/share/i18n/SUPPORTED` 
+&nbsp;&nbsp;&#8735;`pi_locale_lang` | <nobr>`en_US.UTF-8` (default)</nobr> | see list at: `/usr/local/share/i18n/SUPPORTED`
+&nbsp;&nbsp;&#8735;`pi_locale_encoding` | <nobr>`UTF-8` (default)</nobr> | see list at: `/usr/local/share/i18n/SUPPORTED` 
 &nbsp; | | 
 **Software** | | | 
 `pi_nodejs_current` | `true` | Node.js Current v6.2.1, ARMv6

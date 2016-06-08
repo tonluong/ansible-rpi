@@ -1,0 +1,19 @@
+---
+# https://codepoets.co.uk/2014/ansible-random-things/  
+- name: "Check for loglevel"
+  shell: cat /boot/cmdline.txt | grep -c 'loglevel' || true
+  register: pi_loglevel_grep
+
+- name: "Variable Missing: Add loglevel=2 to end of line" 
+  become: true
+  replace: dest=/boot/cmdline.txt regexp='(\s+)$' replace=' loglevel=2 '
+  when: pi_loglevel_grep.stdout == "0"
+
+- name: "Variable Exist: Set loglevel=2" 
+  become: true
+  replace: dest=/boot/cmdline.txt regexp='loglevel=[0-6]' replace='loglevel=2'    
+  when: pi_loglevel_grep.stdout == "1"
+
+#- debug: msg={{pi_loglevel_grep}}
+...
+
