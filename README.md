@@ -7,7 +7,7 @@ Setup Raspberry Pi using Ansible
 Software | | &nbsp;
  --- | --- | ---
 Node.js Current | v6.2.1 | ARMv6
-Node.js LTS | v4.4.5 | ATMv6
+Node.js LTS | v4.4.5 | ARMv6
 
 <br>
 ## 1. Put inside Roles folder
