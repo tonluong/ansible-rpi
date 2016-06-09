@@ -1,4 +1,18 @@
 ---
+- name: "Load Variables for ARMv6"
+  include_vars: pi-nodejs-current-armv6.yml
+  when: ansible_architecture == "armv6l"
+  #  when: pi_software_arch == "armv6"
+
+- name: "Load Variables for ARMv7"
+  include_vars: pi-nodejs-current-armv7.yml
+  when: ansible_architecture == "armv7l"
+
+- name: "Load Variables for ARMv8"
+  include_vars: pi-nodejs-current-armv8.yml
+  when: ansible_architecture == "armv64"
+
+
 - name: "Installing: {{pi_nodejs_current_file}} -> /opt" 
   become: true
   unarchive: src="{{pi_nodejs_current_file}}" dest=/opt copy=no

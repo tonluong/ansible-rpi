@@ -8,6 +8,9 @@ pi_locale_encoding: UTF-8
 pi_timezone_location: America/Los_Angeles
 
 pi_getty_tty_off_item: 1
+
+# software
+pi_software_arch: armv6
     
 ...
 

@@ -1,0 +1,6 @@
+---
+pi_nodejs_lts_file: https://nodejs.org/dist/v4.4.5/node-v4.4.5-linux-arm64.tar.xz
+pi_nodejs_lts_folder: "node-v4.4.5-linux-arm64"
+
+...
+

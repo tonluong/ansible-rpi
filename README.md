@@ -99,25 +99,24 @@ Playbook Variables | Values | Default | &nbsp;
 &nbsp; | | | |
 **System Config** | | |  
 `pi_local_ssh_key` | `true` |  | Add `~/.ssh/id_rsa.pub` to Pi
-`pi_locale` | `true` |  | 
+**`pi_locale`** | `true` |  | 
 &nbsp;&nbsp;&#8735;`pi_locale_lang` |  | <nobr>`en_US.UTF-8`</nobr> | see list at: `/usr/local/share/i18n/SUPPORTED`
 &nbsp;&nbsp;&#8735;`pi_locale_encoding` |  | <nobr>`UTF-8`</nobr> | see list at: `/usr/local/share/i18n/SUPPORTED` 
-`pi_timezone` | `true` |  | 
+**`pi_timezone`** | `true` |  | 
 &nbsp;&nbsp;&#8735;`pi_timezone_location` |  | `America/Los_Angeles` | 
-`pi_getty_tty_off` | `true` |  | 
+**`pi_getty_tty_off`** | `true` |  | 
 &nbsp;&nbsp;&#8735;`pi_getty_tty_off_item` |  | `1` | `1`, `2`, `3`, ...
 &nbsp; | | |
 **Software** | | | |
-`pi_nodejs_current` | `true` |  | Node.js Current v6.2.1, ARMv6
-`pi_nodejs_lts` | `true` |  | Node.js LTS v4.4.5, ARMv6
-
+`pi_nodejs_current` | `true` |  | Node.js Current v6.2.1 (ARMv6, ARMv7, ARMv8)
+`pi_nodejs_lts` | `true` |  | Node.js LTS v4.4.5 (ARMv6, ARMv7, ARMv8)
 
 <br>
 ## Reference
-$ | Pi | Chip | Arch| Bits | Cores | Support
----: | --- | ---| --- | --- | ---: | :---:
-$5 | Pi Zero | BCM2835 | ARMv6 | 32-bit | 1 | Yes
-$20 | A+ | BCM2835 | ARMv6 | 32-bit | 1 | No
-$25 | B+ | BCM2835 | ARMv6 | 32-bit | 1 | Yes
-$35 | Pi 2 B | BCM2836 | ARMv7 | 32-bit | 4 | maybe
-$35 | Pi 3 B | BCM2837 | ARMv8 | 64-bit | 4 | maybe
+Cost | Pi | Chip | Arch| Speed | Bit | Core | Mem |Support
+---: | --- | ---| --- | ---: | --- | ---: | ---: | :---:
+$5 | Pi Zero | BCM2835 | ARMv6 | 1 GHz | 32 | 1 | 512MB |
+$20 | Pi A+ | BCM2835 | ARMv6 | 700 MHz | 32 | 1 | 256MB |
+$25 | Pi B+ | BCM2835 | ARMv6 | 700 MHz | 32 | 1 | 512MB |
+$35 | Pi 2 B | BCM2836 | ARMv7 | 900 MHz | 32 | 4 | 1GB |
+$35 | Pi 3 B | BCM2837 | ARMv8 | 1.2 GHz | 64 | 4 | 1GB |
