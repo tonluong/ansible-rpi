@@ -1,6 +1,8 @@
 # handlers
 ---
-- include: pi_locale.yml
-  when: (pi_locale is defined) and (pi_locale_lang is defined)   
+- include: pi-locale.yml
+  when: pi_locale is defined
        
+- include: pi-timezone.yml
+  when: pi_timezone is defined
 ...

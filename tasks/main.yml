@@ -51,17 +51,22 @@
 
 
 # System Config
+- name: "pi-local-ssh-key"
+  include: pi-local-ssh-key.yml
+  when: pi-local-ssh-key is defined
+    
 - name: "pi-locale"
   include: pi-locale.yml
   when: pi_locale is defined
+
+- name: "pi-timezone"
+  include: pi-timezone.yml
+  when: pi_timezone is defined
 
 - name: "pi-getty-tty-off"
   include: pi-getty-tty-off.yml
   when: pi_getty_tty_off is defined
       
-- name: "pi-local-ssh-key"
-  include: pi-local-ssh-key.yml
-  when: pi-local-ssh-key is defined
 
 # Software 
 - name: "pi-nodejs-current Variables"

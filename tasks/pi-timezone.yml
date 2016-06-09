@@ -1,0 +1,9 @@
+---
+- name: "Setup timezone --> {{ pi_timezone_location }}"
+  become: true
+  copy:
+    content: "{{ pi_timezone_location }}"
+    dest: /etc/timezone
+    mode: 0644
+  notify: update pi-timezone
+...

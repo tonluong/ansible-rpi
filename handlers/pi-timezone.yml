@@ -1,0 +1,7 @@
+# handlers
+---
+- name: update pi-timezone
+  become: true
+  command: dpkg-reconfigure --frontend noninteractive tzdata
+
+...
