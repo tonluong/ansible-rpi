@@ -1,0 +1,14 @@
+---
+- name: "Include GPU memory Reset"
+  include: pi-gpumem-reset.yml
+
+- name: "Set GPU memory to half of system memory"
+  become: true
+  lineinfile: dest=/boot/config.txt line="{{ item }}" state=present
+  with_items:
+      - gpu_mem_256=128
+      - gpu_mem_512=256
+      - gpu_mem_1024=512
+
+...
+

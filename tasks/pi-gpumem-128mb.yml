@@ -1,7 +1,0 @@
----
-- name: Set GPU memory to 128MB
-  lineinfile: dest=/boot/config.txt line='gpu_mem=128' state=present
-  become: true
-
-...
-

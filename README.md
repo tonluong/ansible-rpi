@@ -91,7 +91,10 @@ Playbook Variables | Values | Default | &nbsp;
 `pi_quiet` | `true` |  | `quiet`
 &nbsp; | | | 
  **/boot/config.txt** | | | 
-`pi_gpumem_128mb` | `true` |  | `gpu_mem=128` 
+`pi_gpumem_quarter` | `true` |  | `gpu_mem_256=64`<br>`gpu_mem_512=128`<br>`gpu_mem_1024=256` 
+`pi_gpumem_half` | `true` |  | `gpu_mem_256=128`<br>`gpu_mem_512=256`<br>`gpu_mem_1024=512` 
+**`pi_gpumem`** | `true` |  | `gpu_mem=128` 
+&nbsp;&nbsp;&#8735;`pi_gpumem_size` |  | <nobr>`128`</nobr> |
 `pi_gpumem_reset` | `true` |  | 
 `pi_usb_maxcurrent` | `true` |  | `max_current_usb=1`
 `pi_usb_maxcurrent_reset` | `true` |  |
@@ -108,8 +111,8 @@ Playbook Variables | Values | Default | &nbsp;
 &nbsp;&nbsp;&#8735;`pi_getty_tty_off_item` |  | `1` | `1`, `2`, `3`, ...
 &nbsp; | | |
 **Software** | | | |
-`pi_nodejs_current` | `true` |  | Node.js Current v6.2.1 (ARMv6, ARMv7, ARMv8)
-`pi_nodejs_lts` | `true` |  | Node.js LTS v4.4.5 (ARMv6, ARMv7, ARMv8)
+`pi_nodejs_current` | `true` |  | Node.js Current v6.2.1 <br>ARMv6, ARMv7, ARMv8
+`pi_nodejs_lts` | `true` |  | Node.js LTS v4.4.5 <br>ARMv6, ARMv7, ARMv8
 
 <br>
 ## Reference

@@ -1,0 +1,10 @@
+---
+- name: "Include GPU memory Reset"
+  include: pi-gpumem-reset.yml
+
+- name: "Set GPU memory to {{ pi_gpumem_size }}MB"
+  lineinfile: dest=/boot/config.txt line="gpu_mem={{ pi_gpumem_size }}" state=present
+  become: true
+
+...
+

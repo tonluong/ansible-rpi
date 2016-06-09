@@ -27,13 +27,21 @@
   include: pi-quiet.yml
   when: pi_quiet is defined
       
+- name: "pi-gpumem-quarter" 
+  include: pi-gpumem-quarter.yml
+  when: pi_gpumem_quarter is defined
+
+- name: "pi-gpumem-half" 
+  include: pi-gpumem-half.yml
+  when: pi_gpumem_half is defined
+
 - name: "pi-gpumem-reset" 
   include: pi-gpumem-reset.yml
   when: pi_gpumem_reset is defined
 
-- name: "pi-gpumem-128mb"
-  include: pi-gpumem-128mb.yml
-  when: pi_gpumem_128mb is defined
+- name: "pi-gpumem"
+  include: pi-gpumem.yml
+  when: pi_gpumem is defined
 
 - name: "pi-cursor-off"
   include: pi-cursor-off.yml
