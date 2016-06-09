@@ -1,0 +1,7 @@
+
+---
+- name: Add local SSH key to Pi 
+  authorized_key: user=pi key="{{ lookup('file', '{{pi_local_homedir}}/.ssh/id_rsa.pub') }}"
+...   
+
+

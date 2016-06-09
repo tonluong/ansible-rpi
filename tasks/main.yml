@@ -1,5 +1,11 @@
 # tasks
 ---
+
+# debug
+- debug: msg="ansible_distribution {{ansible_distribution}}"
+- debug: msg="ansible_distribution_release {{ansible_distribution_release}}"
+- debug: msg="ansible_distribution_release {{ansible_distribution_version}}"
+
 # /boot/cmdline.txt
 - name: "pi-console-tty1"
   include: pi-console-tty1.yml
@@ -53,6 +59,9 @@
   include: pi-getty-tty-off.yml
   when: pi_getty_tty_off is defined
       
+- name: "pi-local-ssh-key"
+  include: pi-local-ssh-key.yml
+  when: pi-local-ssh-key is defined
 
 # Software 
 - name: "pi-nodejs-current Variables"
