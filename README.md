@@ -2,14 +2,13 @@
 
 Setup Raspberry Pi using Ansible
 
-- Support  Raspian Jessie, Wheezy (limited support)
 
 
 
 Software | | &nbsp;
  --- | --- | ---
-Node.js Current | v6.2.1 | ARMv6
-Node.js LTS | v4.4.5 | ARMv6
+Node.js Current | v6.2.1 | ARMv6, ARMv7, ARMv8
+Node.js LTS | v4.4.5 | ARMv6, ARMv7, ARMv8
 
 <br>
 ## 1. Put inside Roles folder
@@ -111,8 +110,8 @@ Playbook Variables | Values | Default | &nbsp;
 &nbsp;&nbsp;&#8735;`pi_getty_tty_off_item` |  | `1` | `1`, `2`, `3`, ...
 &nbsp; | | |
 **Software** | | | |
-`pi_nodejs_current` | `true` |  | Node.js Current v6.2.1 <br>ARMv6, ARMv7, ARMv8
-`pi_nodejs_lts` | `true` |  | Node.js LTS v4.4.5 <br>ARMv6, ARMv7, ARMv8
+`pi_nodejs_current` | `true` |  | Node.js Current 
+`pi_nodejs_lts` | `true` |  | Node.js LTS v4.4.5
 
 <br>
 ## Reference
