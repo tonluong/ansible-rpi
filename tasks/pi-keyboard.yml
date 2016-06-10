@@ -1,0 +1,10 @@
+---
+- name: "Setup keyboard --> {{ pi_keyboard_model }}, {{ pi_keyboard_layout }}"
+  become: true
+  copy:
+    src: templates/pi-keyboard.j2
+    dest: /etc/default/keyboard
+    mode: 0644
+  notify: update pi-keyboard
+...
+

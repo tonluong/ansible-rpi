@@ -2,7 +2,7 @@
 
 Setup Raspberry Pi using Ansible
 
-
+- For Raspian Jessie
 
 
 Software | | &nbsp;
@@ -106,12 +106,15 @@ Playbook Variables | Values | Default | &nbsp;
 &nbsp;&nbsp;&#8735;`pi_locale_encoding` |  | <nobr>`UTF-8`</nobr> | see list at: `/usr/local/share/i18n/SUPPORTED` 
 **`pi_timezone`** | `true` |  | 
 &nbsp;&nbsp;&#8735;`pi_timezone_location` |  | `America/Los_Angeles` | 
+**`pi_keyboard`** | `true` |  | 
+&nbsp;&nbsp;&#8735;`pi_keyboard_model` |  | `pc104` | 
+&nbsp;&nbsp;&#8735;`pi_keyboard_layout` |  | `us` | 
 **`pi_getty_tty_off`** | `true` |  | 
 &nbsp;&nbsp;&#8735;`pi_getty_tty_off_item` |  | `1` | `1`, `2`, `3`, ...
 &nbsp; | | |
 **Software** | | | |
 `pi_nodejs_current` | `true` |  | Node.js Current 
-`pi_nodejs_lts` | `true` |  | Node.js LTS v4.4.5
+`pi_nodejs_lts` | `true` |  | Node.js LTS
 
 <br>
 ## Reference

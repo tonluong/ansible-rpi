@@ -1,0 +1,7 @@
+# handlers
+---
+- name: update pi-keyboard
+  become: true
+  command: dpkg-reconfigure --frontend noninteractive keyboard-configuration
+
+...

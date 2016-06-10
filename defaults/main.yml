@@ -10,6 +10,8 @@ pi_local_homedir: "{{ lookup('env','HOME') }}"
 pi_locale_lang: en_US.UTF-8
 pi_locale_encoding: UTF-8  
 pi_timezone_location: America/Los_Angeles
+pi_keyboard_model: pc104
+pi_keyboard_layout: us 
 pi_getty_tty_off_item: 1
 
 # software

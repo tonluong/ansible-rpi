@@ -75,6 +75,10 @@
   include: pi-timezone.yml
   when: pi_timezone is defined
 
+- name: "pi-keyboard"
+  include: pi-keyboard.yml
+  when: pi_keyboard is defined
+
 - name: "pi-getty-tty-off"
   include: pi-getty-tty-off.yml
   when: pi_getty_tty_off is defined
