@@ -1,0 +1,36 @@
+---
+- name: "Load Variables for ARMv6"
+  include_vars: pi-golang-armv6.yml
+  when: ansible_architecture == "armv6l"
+  #  when: pi_software_arch == "armv6"
+
+- name: "Load Variables for ARMv7"
+  include_vars: pi-golang-armv6.yml
+  when: ansible_architecture == "armv7l"
+
+- name: "Load Variables for ARMv8"
+  include_vars: pi-golang-armv6.yml
+  when: ansible_architecture == "armv64"
+
+
+- name: "Installing: {{pi_golang_file}} -> /tmp" 
+  become: true
+  unarchive: src="{{pi_golang_file}}" dest=/tmp copy=no
+
+- name: "Move /tmp/go /opt/{{pi_golang_folder}}"
+  become: true
+  command: "mv /tmp/go /opt/{{pi_golang_folder}}"
+
+- name: "Linking:  /opt/go -> /opt/{{pi_golang_folder}}"
+  become: true
+  file: src="/opt/{{pi_golang_folder}}" dest="/opt/go" state=link
+
+- name: "Add /opt/go/bin to PATH -> /etc/profile"
+  become: true
+  lineinfile: dest=/etc/profile line='export PATH=$PATH:/opt/go/bin' insertafter='EOF' state=present
+  
+#- name: "Add /opt/node/bin to PATH -> /etc/sudoers (for sudo)"
+  #become: true
+  #lineinfile: dest=/etc/sudoers line='Defaults	secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/node/bin"' insertafter='EOF' state=present
+
+...

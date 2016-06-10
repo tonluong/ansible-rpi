@@ -1,15 +1,16 @@
 # ansible-rpi
 
-Setup Raspberry Pi using Ansible
+Raspberry Pi configuration and application install with ansible
 
 - For Raspian Jessie
 
 
-Software | | &nbsp;
- --- | --- | ---
-Node.js Current | v6.2.1 | ARMv6, ARMv7, ARMv8
-Node.js LTS | v4.4.5 | ARMv6, ARMv7, ARMv8
-OMXPlayer | v0.3.7-6c90c75 | 
+Install Variable | Apps | Version | Arch
+--- | --- | --- | ---
+`pi_nodejs_current` | Node.js Current | v6.2.1 | ARMv6, ARMv7, ARMv8
+`pi_nodejs_lts` | Node.js LTS | v4.4.5 | ARMv6, ARMv7, ARMv8
+`pi_golang` | Go | v1.6.2 | ARMv6
+`pi_omxplayer` | OMXPlayer | v0.3.7-6c90c75 | 
 
 <br>
 ## 1. Put inside Roles folder
@@ -113,9 +114,10 @@ Playbook Variables | Values | Default | &nbsp;
 **`pi_getty_tty_off`** | `true` |  | 
 &nbsp;&nbsp;&#8735;`pi_getty_tty_off_item` |  | `1` | `1`, `2`, `3`, ...
 &nbsp; | | |
-**Software** | | | |
+**Apps** | | | |
 `pi_nodejs_current` | `true` |  | Node.js Current 
 `pi_nodejs_lts` | `true` |  | Node.js LTS
+`pi_golang` | `true` |  | Go
 `pi_omxplayer` | `true` |  | Jessie, Wheezy
 
 <br>

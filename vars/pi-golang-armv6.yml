@@ -1,0 +1,6 @@
+---
+pi_golang_file: https://storage.googleapis.com/golang/go1.6.2.linux-armv6l.tar.gz
+pi_golang_folder: "go1.6.2.linux-armv6l"
+
+...
+
