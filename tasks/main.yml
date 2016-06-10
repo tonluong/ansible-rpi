@@ -93,7 +93,9 @@
   include: pi-nodejs-lts.yml
   when: pi_nodejs_lts is defined
 
-
+- name: "pi-omxplayer"
+  include: pi-omxplayer.yml
+  when: pi_omxplayer is defined   
 
 ...
 

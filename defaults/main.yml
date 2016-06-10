@@ -16,6 +16,8 @@ pi_getty_tty_off_item: 1
 
 # software
 pi_software_arch: armv6
+pi_omxplayer_url: http://omxplayer.sconde.net/builds/omxplayer_0.3.7~git20160506~6c90c75_armhf.deb
+pi_omxplayer_file: omxplayer_0.3.7~git20160506~6c90c75_armhf.deb
     
 ...
 

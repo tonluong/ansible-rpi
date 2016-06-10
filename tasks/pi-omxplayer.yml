@@ -1,0 +1,20 @@
+---
+- name: "Install dependency - libpcre3 fonts-freefont-ttf fbset" 
+  become: true
+  apt: name={{item}} state=installed update_cache=true cache_valid_time=3600
+  with_items:
+      - libpcre3
+      - fonts-freefont-ttf
+      - fbset
+                
+- name: "Download {{ pi_omxplayer_url }}"
+  get_url: url="{{ pi_omxplayer_url }}" dest="{{ ansible_env.HOME }}"
+
+- name: "Install {{pi_omxplayer_file}}" 
+  become: true
+  apt: deb="{{ ansible_env.HOME }}/{{pi_omxplayer_file}}" 
+
+- name: "Cleanup"
+  become: true
+  file: path="{{ ansible_env.HOME }}/{{pi_omxplayer_file}}" state=absent
+...
