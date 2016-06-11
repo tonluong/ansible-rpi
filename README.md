@@ -7,21 +7,19 @@ Raspberry Pi configuration and application install with ansible
 
 Install Variable | Apps | Version | Arch
 --- | --- | --- | ---
-`pi_nodejs_current` | Node.js Current | v6.2.1 | ARMv6, ARMv7, ARMv8
+`pi_nodejs` | Node.js Current | v6.2.1 | ARMv6, ARMv7, ARMv8
 `pi_nodejs_lts` | Node.js LTS | v4.4.5 | ARMv6, ARMv7, ARMv8
 `pi_golang` | Go | v1.6.2 | ARMv6
 `pi_omxplayer` | OMXPlayer | v0.3.7-6c90c75 | 
 
 <br>
-## 1. Put inside Roles folder
+## 1. Install
 
 ```
 myansible/
 		roles/				<-- Put it here
 		playbook.yml
 		inventory.yml
-		...
-	
 ```
 ```shell
 cd myansible/roles/
@@ -38,7 +36,7 @@ playbook.yml
 - hosts: pi
 
   vars:
-    - pi_nodejs_current: true
+    - pi_nodejs: true
 
   roles:
     - ansible-rpi
@@ -115,7 +113,7 @@ Playbook Variables | Values | Default | &nbsp;
 &nbsp;&nbsp;&#8735;`pi_getty_tty_off_item` |  | `1` | `1`, `2`, `3`, ...
 &nbsp; | | |
 **Apps** | | | |
-`pi_nodejs_current` | `true` |  | Node.js Current 
+`pi_nodejs` | `true` |  | Node.js Current 
 `pi_nodejs_lts` | `true` |  | Node.js LTS
 `pi_golang` | `true` |  | Go
 `pi_omxplayer` | `true` |  | Jessie, Wheezy
@@ -129,3 +127,25 @@ $20 | Pi A+ | BCM2835 | ARMv6 | 700 MHz | 32 | 1 | 256MB |
 $25 | Pi B+ | BCM2835 | ARMv6 | 700 MHz | 32 | 1 | 512MB |
 $35 | Pi 2 B | BCM2836 | ARMv7 | 900 MHz | 32 | 4 | 1GB |
 $35 | Pi 3 B | BCM2837 | ARMv8 | 1.2 GHz | 64 | 4 | 1GB |
+
+<br>
+## Playbooks
+
+### Silent Boot
+This playpbook is godo for mediaplayer or signage use case. 
+
+```yaml
+---
+- hosts: pi
+
+  vars:
+  		- pi_console_tty3: true
+  		- pi_cursor_off: true
+  		- pi_loglevel_2: true
+  		- pi_nologo: true
+  		- pi_quiet: true
+  		
+  roles:
+  		- ansible-rpi
+...
+```

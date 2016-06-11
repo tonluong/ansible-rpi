@@ -85,9 +85,9 @@
       
 
 # Software 
-- name: "pi-nodejs-current"
+- name: "pi-nodejs"
   include: pi-nodejs-current.yml
-  when: pi_nodejs_current is defined
+  when: pi_nodejs is defined
 
 - name: "pi-nodejs-lts"
   include: pi-nodejs-lts.yml
