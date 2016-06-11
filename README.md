@@ -63,22 +63,6 @@ ansible-playbook playbook.yml -i inventory.yml
 <br>
 ## Playbook Variables
 
-```yaml
----
-- hosts: pi
-
-  vars:
-  		- pi_console_tty3: true
-  		- pi_quiet: true
-  		...
-  		
-  roles:
-  		- ansible-rpi
-...
-```
-
-<br>
-
 Playbook Variables | Values | Default | &nbsp;  
 ------------------ | ------ | :-------: | --- 
  **/boot/cmdline.txt** | | | |
@@ -131,10 +115,15 @@ $35 | Pi 3 B | BCM2837 | ARMv8 | 1.2 GHz | 64 | 4 | 1GB |
 <br>
 ## Playbooks
 
-### Silent Boot
-This playpbook is godo for mediaplayer or signage use case. 
+Playbook | Notes
+--- | ---
+[playbook-pi-silentboot.yml](#playbook-pi-silentboot.yml) | Good for mediaplayer or signage use case.
+
+<br>
+### playbook-pi-silentboot.yml
 
 ```yaml
+# pi-playbook-silentboot.yml
 ---
 - hosts: pi
 
@@ -144,6 +133,15 @@ This playpbook is godo for mediaplayer or signage use case.
   		- pi_loglevel_2: true
   		- pi_nologo: true
   		- pi_quiet: true
+		
+		- pi_gpumem_half
+  		- pi_usb_maxcurrent: true
+  		- pi_hdmiboost-4
+  		
+  		- pi_getty_tty_off
+  		
+  		- pi_omxplayer: true
+  		- pi_nodejs: true
   		
   roles:
   		- ansible-rpi
