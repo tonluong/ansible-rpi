@@ -134,11 +134,11 @@ Playbook | Notes
   		- pi_nologo: true
   		- pi_quiet: true
 		
-		- pi_gpumem_half
+		- pi_gpumem_half: true
   		- pi_usb_maxcurrent: true
-  		- pi_hdmiboost-4
+  		- pi_hdmiboost-4: true
   		
-  		- pi_getty_tty_off
+  		- pi_getty_tty_off: true 
   		
   		- pi_omxplayer: true
   		- pi_nodejs: true
