@@ -103,7 +103,7 @@ Playbook Variables | Values | Default | &nbsp;
 `pi_omxplayer` | `true` |  | Jessie, Wheezy
 `pi_install` | <nobr>`- usbmount`</nobr><br>`- vim` |  | Install list of packages 
 
-```
+```yaml
 # pi_install
 ---
 hosts: pi
