@@ -101,7 +101,7 @@ Playbook Variables | Values | Default | &nbsp;
 `pi_nodejs_lts` | `true` |  | Node.js LTS
 `pi_golang` | `true` |  | Go
 `pi_omxplayer` | `true` |  | Jessie, Wheezy
-`pi_install` | `- usbmount`<br>`- vim` |  | Install list of packages 
+`pi_install` | <nobr>`- usbmount`</nobr><br>`- vim` |  | Install list of packages 
 
 ```
 # pi_install
@@ -113,6 +113,7 @@ vars:
 		- vim
 roles:
 	- ansible-rpi
+...
 ```
 
 <br>
