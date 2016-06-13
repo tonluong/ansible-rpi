@@ -97,10 +97,13 @@
   include: pi-golang.yml
   when: pi_golang is defined
 
-
 - name: "pi-omxplayer"
   include: pi-omxplayer.yml
   when: pi_omxplayer is defined   
+
+- name: "pi-install-package"
+  include: pi-install-package.yml
+  when: pi_install is defined   
 
 ...
 
