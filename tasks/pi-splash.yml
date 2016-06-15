@@ -1,0 +1,25 @@
+---
+- name: "Ensure path exists"
+  become: true
+  file: path=/opt/splash state=directory
+      
+- name: "Copy: splash.fb -> /opt/splash/" 
+  become: true
+  copy: src=splash.fb dest=/opt/splash/ mode="u+r,g+r,o+r"
+
+- name: "Copy:  splash.sh -> /opt/splash/"
+  become: true
+  copy: src=splash.sh dest="/opt/splash" mode="u+rx,g+rx,o+rx"
+
+- name: "Copy:  splash.service -> /opt/splash/"
+  become: true
+  copy: src=splash.service dest="/etc/systemd/system/" mode="u+rwx,g+rx,o+rx"
+
+- name: "Start: splash.service"
+  become: true
+  command: /bin/systemctl enable splash.service
+
+
+   
+
+...

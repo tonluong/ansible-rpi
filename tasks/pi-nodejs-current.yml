@@ -24,6 +24,10 @@
 - name: "Add /opt/node/bin to PATH -> /etc/profile"
   become: true
   lineinfile: dest=/etc/profile line='export PATH=$PATH:/opt/node/bin' insertafter='EOF' state=present
+
+- name: "Add /opt/node/lib/node_modules to NODE_PATH -> /etc/profile"
+  become: true
+  lineinfile: dest=/etc/profile line='export NODE_PATH=/opt/node/lib/node_modules/' insertafter='EOF' state=present
   
 - name: "Add /opt/node/bin to PATH -> /etc/sudoers (for sudo)"
   become: true
