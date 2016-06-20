@@ -66,12 +66,14 @@ ansible-playbook playbook.yml -i inventory.yml
 Playbook Variables | Values | Default | &nbsp;  
 ------------------ | ------ | :-------: | --- 
  **/boot/cmdline.txt** | | | |
+`pi_console_tty_off` | `true` |  | 
 `pi_console_tty1` | `true` |  | `console=tty1` 
 `pi_console_tty3` | `true` |  | `console=tty3` 
 `pi_cursor_off` | `true` |  | `vt.global_cursor_default=0`
 `pi_loglevel_2` | `true` |  | `loglevel=2`
 `pi_nologo` | `true` |  | `logo.nologo`
 `pi_quiet` | `true` |  | `quiet`
+`pi_consoleblank_off` | `true` |  | `consoleblank=0` <br>Prevents console from going to sleep
 &nbsp; | | | 
  **/boot/config.txt** | | | 
 `pi_gpumem_quarter` | `true` |  | `gpu_mem_256=64`<br>`gpu_mem_512=128`<br>`gpu_mem_1024=256` 
@@ -142,7 +144,7 @@ Playbook | Notes
 - hosts: pi
 
   vars:
-  		- pi_console_tty3: true
+  		- pi_console_tty_off: true
   		- pi_cursor_off: true
   		- pi_loglevel_2: true
   		- pi_nologo: true

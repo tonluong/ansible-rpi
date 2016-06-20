@@ -1,24 +1,37 @@
 ---
+- name: "Install netpbm Package" 
+  become: true
+  apt: name=netpbm state=installed update_cache=true cache_valid_time=3600
+
 - name: "Ensure path exists"
   become: true
   file: path=/opt/splash state=directory
       
-- name: "Copy: splash.fb -> /opt/splash/" 
+- name: "Copy: splash.png -> /opt/splash/" 
   become: true
-  copy: src=splash.fb dest=/opt/splash/ mode="u+r,g+r,o+r"
+  copy: src=splash.png dest=/opt/splash/ mode="u+r,g+r,o+r"
 
 - name: "Copy:  splash.sh -> /opt/splash/"
   become: true
   copy: src=splash.sh dest="/opt/splash" mode="u+rx,g+rx,o+rx"
 
+- name: "Copy:  showppm -> /opt/splash/"
+  become: true
+  copy: src=showppm dest="/opt/splash" mode="u+rx,g+rx,o+rx"
+
 - name: "Copy:  splash.service -> /opt/splash/"
   become: true
-  copy: src=splash.service dest="/etc/systemd/system/" mode="u+rwx,g+rx,o+rx"
+  copy: src=splash.service dest="/etc/systemd/system/" mode="u+rx,g+rx,o+rx"
 
-- name: "Start: splash.service"
+- name: "Generate: splash.ppm"
+  become: true
+  command: bash -c "pngtopnm /opt/splash/splash.png > /opt/splash/splash.ppm"
+
+- name: "Enable: splash.service"
   become: true
   command: /bin/systemctl enable splash.service
 
+ 
 
    
 

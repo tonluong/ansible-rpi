@@ -1,0 +1,19 @@
+---
+# https://codepoets.co.uk/2014/ansible-random-things/  
+- name: "Check for consoleblank"
+  shell: cat /boot/cmdline.txt | grep -c 'consoleblank' || true
+  register: pi_console_blank_grep
+
+- name: "Variable Missing: Add consoleblank=0 to end of line" 
+  become: true
+  replace: dest=/boot/cmdline.txt regexp='(\s+)$' replace=' consoleblank=0 '
+  when: pi_console_blank_grep.stdout == "0"
+
+- name: "Variable Exist: Set consoleblank=0" 
+  become: true
+  replace: dest=/boot/cmdline.txt regexp='consoleblank=[0-1]+' replace='consoleblank=0'    
+  when: pi_console_blank_grep.stdout == "1"
+
+#- debug: msg={{pi_cursor_off_grep}}
+...
+

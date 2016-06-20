@@ -11,6 +11,10 @@
 
 
 # /boot/cmdline.txt
+- name: "pi-console-tty-off"
+  include: pi-console-tty-off.yml
+  when: pi_console_tty_off is defined
+
 - name: "pi-console-tty1"
   include: pi-console-tty1.yml
   when: pi_console_tty1 is defined
@@ -51,6 +55,10 @@
   include: pi-loglevel-2.yml
   when: pi_loglevel_2 is defined
 
+- name: "pi-consoleblank-off"
+  include: pi-consoleblank-off.yml
+  when: pi_consoleblank_off is defined
+
       
 # /boot/config.txt
 - name: "pi-usb-maxcurrent-reset"
@@ -82,6 +90,11 @@
 - name: "pi-getty-tty-off"
   include: pi-getty-tty-off.yml
   when: pi_getty_tty_off is defined
+
+- name: "pi-splash"
+  include: pi-splash.yml
+  when: pi_splash is defined
+
       
 
 # Software 
