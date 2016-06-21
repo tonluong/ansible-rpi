@@ -83,7 +83,7 @@ Playbook Variables | Values | Default | &nbsp;
 `pi_gpumem_reset` | `true` |  | 
 `pi_usb_maxcurrent` | `true` |  | `max_current_usb=1`
 `pi_usb_maxcurrent_reset` | `true` |  |
-`pi_hdmiboost-4` | `true` |  | `config_hdmi_boost=4` 
+`pi_hdmiboost_4` | `true` |  | `config_hdmi_boost=4` 
 &nbsp; | | | |
 **System Config** | | |  
 `pi_local_ssh_key` | `true` |  | Add `~/.ssh/id_rsa.pub` to Pi
@@ -144,22 +144,27 @@ Playbook | Notes
 - hosts: pi
 
   vars:
-  		- pi_console_tty_off: true
-  		- pi_cursor_off: true
-  		- pi_loglevel_2: true
-  		- pi_nologo: true
-  		- pi_quiet: true
-		
-		- pi_gpumem_half: true
-  		- pi_usb_maxcurrent: true
-  		- pi_hdmiboost-4: true
-  		
-  		- pi_getty_tty_off: true 
-  		
-  		- pi_omxplayer: true
-  		- pi_nodejs: true
-  		
+      - pi_console_tty_off: true
+      - pi_cursor_off: true
+      - pi_loglevel_2: true
+      - pi_nologo: true
+      - pi_quiet: true
+      - pi_consoleblank_off: true
+
+      - pi_gpumem_half: true
+      - pi_usb_maxcurrent: true
+      - pi_hdmiboost_4: true
+
+      - pi_locale: true
+      - pi_timezone: true
+      - pi_keyboard: true
+      
+      - pi_getty_tty_off: true 
+      - 
+      - pi_omxplayer: true
+      - pi_nodejs: true
+
   roles:
-  		- ansible-rpi
-...
+      - ansible-rpi
+...   
 ```

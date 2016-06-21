@@ -69,11 +69,14 @@
   include: pi-usb-maxcurrent.yml
   when: pi_usb_maxcurrent is defined
 
+- name: "pi_hdmiboost_4"
+  include: pi-hdmiboost-4.yml
+  when: pi_hdmiboost_4 is defined  
 
 # System Config
 - name: "pi-local-ssh-key"
   include: pi-local-ssh-key.yml
-  when: pi-local-ssh-key is defined
+  when: pi_local_ssh_key is defined
     
 - name: "pi-locale"
   include: pi-locale.yml
