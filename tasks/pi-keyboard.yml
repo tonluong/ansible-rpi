@@ -5,6 +5,11 @@
     src: templates/pi-keyboard.j2
     dest: /etc/default/keyboard
     mode: 0644
-  notify: update pi-keyboard
+
+
+- name: "Update Keyboard"
+  become: true
+  command: dpkg-reconfigure --frontend noninteractive keyboard-configuration
+       
 ...
 

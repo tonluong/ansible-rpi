@@ -5,5 +5,9 @@
     content: "{{ pi_timezone_location }}"
     dest: /etc/timezone
     mode: 0644
-  notify: update pi-timezone
+
+
+- name: "Update Timezone"
+  become: true
+  command: dpkg-reconfigure --frontend noninteractive tzdata   
 ...

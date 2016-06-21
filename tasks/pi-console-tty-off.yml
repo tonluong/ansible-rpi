@@ -1,18 +1,16 @@
 ---
-- name: "Remove console=tty[1-9]" 
-  become: true
-  replace: dest=/boot/cmdline.txt regexp='console=tty[1-9]' replace='console=tty1'
-  tags:
-      - default
 
 - name: "Check for console=tty"
   shell: cat /boot/cmdline.txt | grep -c 'console=tty' || true
   register: pi_console_tty_off_grep
+      
+- debug: var=pi_console_tty_off_grep 
 
 - name: "Variable Exist: Removing console=tty" 
   become: true
-  replace: dest=/boot/cmdline.txt regexp='console=tty[1-9]' replace=''    
-  when: pi_console_tty_off_grep == "1"
-                                        
+  replace: dest=/boot/cmdline.txt regexp="console=tty[1-9]+" replace=''    
+  when: pi_console_tty_off_grep.stdout == "1"
+
+
 ...
 
