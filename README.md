@@ -104,6 +104,7 @@ Playbook Variables | Values | Default | &nbsp;
 `pi_golang` | `true` |  | Go
 `pi_omxplayer` | `true` |  | Jessie, Wheezy
 `pi_install` | <nobr>`- usbmount`</nobr><br>`- vim` |  | Install list of packages 
+`pi_splash` | true |  | pi splashscreen 
 
 ```yaml
 # pi_install
@@ -160,7 +161,7 @@ Playbook | Notes
       - pi_keyboard: true
       
       - pi_getty_tty_off: true 
-      - 
+      
       - pi_omxplayer: true
       - pi_nodejs: true
 

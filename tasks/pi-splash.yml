@@ -7,21 +7,14 @@
   become: true
   file: path=/opt/splash state=directory
       
-- name: "Copy: splash.png -> /opt/splash/" 
+- name: "Copy Files"
   become: true
-  copy: src=splash.png dest=/opt/splash/ mode="u+r,g+r,o+r"
-
-- name: "Copy:  splash.sh -> /opt/splash/"
-  become: true
-  copy: src=splash.sh dest="/opt/splash" mode="u+rx,g+rx,o+rx"
-
-- name: "Copy:  showppm -> /opt/splash/"
-  become: true
-  copy: src=showppm dest="/opt/splash" mode="u+rx,g+rx,o+rx"
-
-- name: "Copy:  splash.service -> /opt/splash/"
-  become: true
-  copy: src=splash.service dest="/etc/systemd/system/" mode="u+rx,g+rx,o+rx"
+  copy: src="{{ item.src }}" dest="{{ item.dest }}" mode="{{ item.mode }}"
+  with_items:
+      - { src: "splash.png", dest: "/opt/splash/", mode: "u=rw,g=r,o=r" }
+      - { src: "splash.sh", dest: "/opt/splash/", mode: "u=rx,g=rx,o=rx" }
+      - { src: "showppm", dest: "/opt/splash/", mode: "u=rx,g=rx,o=rx" }
+      - { src: "splash.service", dest: "/etc/systemd/system/", mode: "u=rw,g=r,o=r" }
 
 - name: "Generate: splash.ppm"
   become: true
@@ -31,8 +24,5 @@
   become: true
   command: /bin/systemctl enable splash.service
 
- 
-
-   
 
 ...

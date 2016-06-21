@@ -1,10 +1,11 @@
 [Unit]
 Description=Splash Screen
-#DefaultDependencies=false
+DefaultDependencies=false
 
 [Service]
 ExecStart=/bin/sh /opt/splash/splash.sh
 Type=simple
 
 [Install]
-WantedBy=multi-user.target
+#WantedBy=multi-user.target
+WantedBy=local-fs.target
