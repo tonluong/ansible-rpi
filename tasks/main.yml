@@ -73,6 +73,10 @@
   include: pi-hdmiboost-4.yml
   when: pi_hdmiboost_4 is defined  
 
+- name: "pi-display-rotate"
+  include: pi-display-rotate.yml
+  when: pi_display_rotate is defined
+
 # System Config
 - name: "pi-local-ssh-key"
   include: pi-local-ssh-key.yml

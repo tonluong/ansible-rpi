@@ -1,0 +1,8 @@
+---
+- name: Reset Display Rotate to default
+  become: true
+  lineinfile: dest=/boot/config.txt regexp="{{ item }}" state=absent
+  with_items:
+      - display_rotate=[0-9]+
+...
+

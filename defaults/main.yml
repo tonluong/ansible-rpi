@@ -4,6 +4,7 @@
 
 # /boot/config.txt
 pi_gpumem_size: 128
+pi_display_rotate_position: 3
 
 # System Config
 pi_local_homedir: "{{ lookup('env','HOME') }}"
@@ -13,6 +14,7 @@ pi_timezone_location: America/Los_Angeles
 pi_keyboard_model: pc104
 pi_keyboard_layout: us 
 pi_getty_tty_off_item: 1
+
 
 # software
 #pi_software_arch: armv6

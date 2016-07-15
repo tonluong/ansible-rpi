@@ -1,0 +1,10 @@
+---
+- name: "Include Display Rotate Reset"
+  include: pi-display-rotate-reset.yml
+
+- name: "Set Display Rotate to {{ pi_display_rotate_position }}"
+  lineinfile: dest=/boot/config.txt line="display_rotate={{ pi_display_rotate_position }}" state=present
+  become: true
+
+...
+

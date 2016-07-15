@@ -84,6 +84,8 @@ Playbook Variables | Values | Default | &nbsp;
 `pi_usb_maxcurrent` | `true` |  | `max_current_usb=1`
 `pi_usb_maxcurrent_reset` | `true` |  |
 `pi_hdmiboost_4` | `true` |  | `config_hdmi_boost=4` 
+**`pi_display_rotate`** | `true` |  | `gpu_mem=128` 
+&nbsp;&nbsp;&#8735;`pi_display_rotate_position` |  | <nobr>`1`</nobr> | 0=0 degree (normal), 1=90 degree, 2=180 degree, 3=270 degree
 &nbsp; | | | |
 **System Config** | | |  
 `pi_local_ssh_key` | `true` |  | Add `~/.ssh/id_rsa.pub` to Pi
