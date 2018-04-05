@@ -123,14 +123,14 @@ roles:
 
 <br>
 ## Reference
-Cost | Pi | Chip | Arch| Speed | Bit | Core | Mem |Support
+Cost | Pi | Chip | Arch| Speed | Bit | Core | Mem | Network / Bluetooth 
 ---: | --- | ---| --- | ---: | --- | ---: | ---: | :---:
 $5 | Pi Zero | BCM2835 | ARMv6 | 1 GHz | 32 | 1 | 512MB |
 $20 | Pi A+ | BCM2835 | ARMv6 | 700 MHz | 32 | 1 | 256MB |
 $25 | Pi B+ | BCM2835 | ARMv6 | 700 MHz | 32 | 1 | 512MB |
 $35 | Pi 2 B | BCM2836 | ARMv7 | 900 MHz | 32 | 4 | 1GB |
-$35 | Pi 3 B | BCM2837 | ARMv8 | 1.2 GHz | 64 | 4 | 1GB |
-
+$35 | Pi 3 B | BCM2837 | ARMv8 | 1.2 GHz | 64 | 4 | 1GB | 10/100 Mb/s<br>802.11n WiFi<br>Bluetooth 4.1
+$35 | Pi 3 B+ |  BCM2837B0 | | 1.4GHZ | 64 | 4 | | CYW43455 <br> 10/100/1000 GbE (USB 2.0) <br> 2.4/5 GHz WiFi<br>Bluetooth 4.2 LS BLE|
 <br>
 ## Playbooks
 
