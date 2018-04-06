@@ -10,9 +10,10 @@ Install Variable | Apps | Version | Arch
 `pi_nodejs` | Node.js Current | v6.2.1 | ARMv6, ARMv7, ARMv8
 `pi_nodejs_lts` | Node.js LTS | v4.4.5 | ARMv6, ARMv7, ARMv8
 `pi_golang` | Go | v1.6.2 | ARMv6
-`pi_omxplayer` | OMXPlayer | v0.3.7-6c90c75 | 
+`pi_omxplayer` | OMXPlayer | v0.3.7-6c90c75 | &nbsp;
 
 <br>
+
 ## 1. Install
 
 ```
@@ -27,9 +28,10 @@ git clone https://github.com/tonluong/ansible-rpi.git
 ```  
 
 <br>
+
 ## 2. Setup Playbook, Inventory
 
-playbook.yml
+### playbook.yml
 
 ```yaml
 ---
@@ -43,7 +45,8 @@ playbook.yml
 ...
 ```
 <br>
-inventory.yml
+
+### inventory.yml
 
 ```yaml
 [pi]
@@ -51,6 +54,7 @@ inventory.yml
 192.168.9.6		ansible_ssh_user=pi
 ```
 <br>
+
 ## 3. Run it
 ```shell
 cd myansible/
@@ -61,6 +65,7 @@ ansible-playbook playbook.yml -i inventory.yml
 ---
 
 <br>
+
 ## Playbook Variables
 
 Playbook Variables | Values | Default | &nbsp;  
@@ -108,6 +113,9 @@ Playbook Variables | Values | Default | &nbsp;
 `pi_install` | <nobr>`- usbmount`</nobr><br>`- vim` |  | Install list of packages 
 `pi_splash` | true |  | pi splashscreen 
 
+<br>
+
+
 ```yaml
 # pi_install
 ---
@@ -122,16 +130,18 @@ roles:
 ```
 
 <br>
+
 ## Reference
 Cost | Pi | Chip | Arch| Speed | Bit | Core | Mem | Network / Bluetooth 
 ---: | --- | ---| --- | ---: | --- | ---: | ---: | :---:
-$5 | Pi Zero | BCM2835 | ARMv6 | 1 GHz | 32 | 1 | 512MB |
-$20 | Pi A+ | BCM2835 | ARMv6 | 700 MHz | 32 | 1 | 256MB |
-$25 | Pi B+ | BCM2835 | ARMv6 | 700 MHz | 32 | 1 | 512MB |
-$35 | Pi 2 B | BCM2836 | ARMv7 | 900 MHz | 32 | 4 | 1GB |
+$5 | Pi Zero | BCM2835 | ARMv6 | 1 GHz | 32 | 1 | 512MB | &nbsp;
+$20 | Pi A+ | BCM2835 | ARMv6 | 700 MHz | 32 | 1 | 256MB | &nbsp;
+$25 | Pi B+ | BCM2835 | ARMv6 | 700 MHz | 32 | 1 | 512MB | &nbsp;
+$35 | Pi 2 B | BCM2836 | ARMv7 | 900 MHz | 32 | 4 | 1GB | &nbsp;
 $35 | Pi 3 B | BCM2837 | ARMv8 | 1.2 GHz | 64 | 4 | 1GB | 10/100 Mb/s<br>802.11n WiFi<br>Bluetooth 4.1
 $35 | Pi 3 B+ |  BCM2837B0 | | 1.4GHZ | 64 | 4 | | CYW43455 <br> 10/100/1000 GbE (USB 2.0) <br> 2.4/5 GHz WiFi<br>Bluetooth 4.2 LS BLE|
 <br>
+
 ## Playbooks
 
 Playbook | Notes
@@ -139,6 +149,7 @@ Playbook | Notes
 [playbook-pi-silentboot.yml](#playbook-pi-silentboot.yml) | Good for mediaplayer or signage use case.
 
 <br>
+
 ### playbook-pi-silentboot.yml
 
 ```yaml
@@ -171,3 +182,4 @@ Playbook | Notes
       - ansible-rpi
 ...   
 ```
+
