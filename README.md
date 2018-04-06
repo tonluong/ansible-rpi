@@ -60,9 +60,6 @@ git clone https://github.com/tonluong/ansible-rpi.git
 cd myansible/
 ansible-playbook playbook.yml -i inventory.yml
 ``` 
-    
-<br>
----
 
 <br>
 
